@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for file in $(ls -al *.c)
+do
+    echo $file
+done
+exit 0

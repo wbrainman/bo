@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "Is it morning, please answer yes or no"
+read answer
+
+if [ "$answer" = "yes" ]
+then
+    echo "Good morning"
+else if [ "$answer" = "no" ] ; then
+    echo "Good afternoon"
+else
+    echo "wrong answer"
+    exit 1
+fi
+    exit 0

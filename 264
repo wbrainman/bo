@@ -1,0 +1,19 @@
+#!/bin/sh
+
+yes_or_no() {
+    echo "is your name is $* ?"
+    case "$&" in
+        wang ) return 1;;
+        * ) return 0;;
+    esac
+}
+
+echo "original parameters are $*"
+
+if yes_or_no $1
+then
+    echo "Hi $1, nice name"
+else
+    echo "never mind"
+fi
+exit 0
