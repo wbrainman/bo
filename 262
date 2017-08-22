@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -f /bin/bash ]
+then
+    echo "file exit"
+fi
+
+if [ -d /bin/bash ]
+then
+    echo "is a dir"
+else
+    echo "is NOT a dir"
+fi
