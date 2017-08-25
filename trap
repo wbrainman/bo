@@ -1,0 +1,30 @@
+#!/bin/sh
+
+echo "creating file /tmp/temp_file_$$"
+date >  /tmp/temp_file_$$
+
+echo press interrupt CTRL+C ...
+trap 'rm -f /tmp/temp_file_$$' INT
+while [ -f /tmp/temp_file_$$ ]
+do
+    echo file exit !!!
+    sleep 1
+done
+echo file no longer exit
+
+#trap  INT
+trap 'rm -f /tmp/temp_file2_$$' INT
+echo creating file /tmp/temp_file2_$$
+date >  /tmp/temp_file2_$$
+
+echo "press interrupt CTRL+C ..."
+while [ -f /tmp/temp_file2_$$ ]
+do
+    echo file2 exit !!!
+    sleep 1
+done
+#trap  INT
+echo we never get here
+
+
+
