@@ -20,7 +20,6 @@ title_file="title.cdb"
 tracks_file="tracks.cdb"
 temp_file=/tmp/cdb.$$
 trap 'rm -f $temp_file' EXIT
-echo -e "11111111111111111111111111 \c"
 
 
 get_return() {
@@ -124,7 +123,6 @@ add_records() {
         insert_title $cdcatnum,$cdtitle,$cdtype,$cdac
         add_record_tracks
     else
-        #where is remove records func ??
         remove_records 
     fi 
     return
@@ -147,16 +145,18 @@ find_cd() {
         return 0
     fi
     grep "$searchstr" $title_file > $temp_file
-    set $(wc -l $temp_file)
-    linesfound=$l
+#    set $(wc -l $temp_file)
+#    linesfound=$l
+    linesfound=$(wc -l $temp_file)
+    echo "we found ${linesfound%%/tmp*} line"
 
-    case "$linesfound" in
+    case "${linesfound%%/tmp*}" in
         0) echo "Sorry, nothing found"
             get_return
             return 0
             ;;
         1) ;;
-        2) echo "Sorry, not unique."
+        *) echo "Sorry, not unique."
             echo "Found the following"
             cat $temp_file
             get_return
@@ -212,11 +212,13 @@ update_cd() {
 }
 
 count_cds() {
-    set $(wc -l $title_file)
-    num_titles=$l
-    set $(wc -l $tracks_file)
-    num_tracks=$l
-    echo found $num_titles CDs, with a total of $num_tracks tracks
+    #set $(wc -l $title_file)
+    #num_titles=$l
+    #set $(wc -l $tracks_file)
+    #num_tracks=$l
+    num_titles=$(wc -l $title_file)
+    num_tracks=$(wc -l $tracks_file)
+    echo found ${num_titles%%/tmp*} CDs, with a total of ${num_tracks%%/tmp*} tracks
     get_return
     return
 }
@@ -276,7 +278,7 @@ touch $tracks_file
 fi
 
 # Now the application proper
-clear
+#clear
 echo
 echo
 echo "Mini CD manager"
