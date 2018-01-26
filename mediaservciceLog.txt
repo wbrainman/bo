@@ -1,0 +1,652 @@
+01-01 00:14:07.904 D/mediaservice(   59): MediaService::MediaService
+01-01 00:14:07.904 D/mediaservice(   59): MediaProvider::MediaProvider()
+01-01 00:14:07.908 D/mediaservice(   59): MediaProvider::initialize()
+01-01 00:14:07.908 D/mediaservice(   59): MediaProvider::start()
+01-01 00:14:07.908 D/mediaservice(   59): MediaService::registerProvider
+01-01 00:14:08.140 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_audio_index]
+01-01 00:14:08.144 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_audio_index
+01-01 00:14:08.148 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_audio_repeat]
+01-01 00:14:08.152 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_audio_repeat
+01-01 00:14:08.200 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_audio_random]
+01-01 00:14:08.204 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_audio_random
+01-01 00:14:08.224 D/mediaservice(   62): MediaService::MediaService
+01-01 00:14:08.232 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_audio_time]
+01-01 00:14:08.232 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_audio_time
+01-01 00:14:08.240 D/mediaservice(   62): MediaProvider::MediaProvider()
+01-01 00:14:08.248 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_video_index]
+01-01 00:14:08.252 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_video_index
+01-01 00:14:08.280 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_video_time]
+01-01 00:14:08.292 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_video_time
+01-01 00:14:08.304 D/mediaservice(   62): MediaProvider::initialize()
+01-01 00:14:08.364 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_last_usb_source]
+01-01 00:14:08.364 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_last_usb_source
+01-01 00:14:08.368 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_bt_name]
+01-01 00:14:08.368 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_bt_name
+01-01 00:14:08.384 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_module_name]
+01-01 00:14:08.388 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_module_name
+01-01 00:14:08.408 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_miracast_name]
+01-01 00:14:08.408 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_miracast_name
+01-01 00:14:08.408 D/mediaservic[    4.645233] random: nonblocking pool is initialized
+e(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_bdaddress]
+01-01 00:14:08.408 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_bdaddress
+01-01 00:14:08.436 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_serial_number]
+01-01 00:14:08.436 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_serial_number
+01-01 00:14:08.440 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_phonebook_download]
+01-01 00:14:08.440 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_phonebook_download
+01-01 00:14:08.492 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:08.492 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+01-01 00:14:08.512 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_minute]
+01-01 00:14:08.536 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_minute
+01-01 00:14:08.536 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_hour]
+01-01 00:14:08.536 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_hour
+01-01 00:14:08.544 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_vehicle_gears]
+01-01 00:14:08.544 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_vehicle_gears
+01-01 00:14:08.544 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_illumination]
+01-01 00:14:08.548 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_illumination
+01-01 00:14:08.612 D/mediaservice(   59): MediaService::onStart
+01-01 00:14:08.620 D/mediaservice(   59): MediaService::onStart, start main thread
+01-01 00:14:08.700 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_audio_type]
+01-01 00:14:08.700 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_audio_type
+01-01 00:14:08.704 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_audio_priority]
+01-01 00:14:08.708 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_audio_priority
+01-01 00:14:08.708 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_audio_takeconstraint]
+01-01 00:14:08.712 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_audio_takeconstraint
+01-01 00:14:08.720 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_audio_borrowconstraint]
+01-01 00:14:08.720 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_audio_borrowconstraint
+01-01 00:14:08.732 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_video_type]
+01-01 00:14:08.732 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_video_type
+01-01 00:14:08.736 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_video_priority]
+01-01 00:14:08.736 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_video_priority
+01-01 00:14:08.740 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_video_takeconstraint]
+01-01 00:14:08.740 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_video_takeconstraint
+01-01 00:14:08.748 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_video_borrowconstraint]
+01-01 00:14:08.748 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_video_borrowconstraint
+01-01 00:14:08.748 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_cmf1_status]
+01-01 00:14:08.752 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_cmf1_status
+01-01 00:14:08.760 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_carplay_serial_number]
+01-01 00:14:08.760 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_carplay_serial_number
+01-01 00:14:08.768 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_ready_status]
+01-01 00:14:08.768 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_ready_status
+01-01 00:14:08.808 D/mediaservice(   62): MediaProvider initialize status error 1.
+01-01 00:14:08.840 D/mediaservice(   62): MediaService::registerProvider
+01-01 00:14:08.844 D/mediaservice(   62): MediaProvider::start()
+01-01 00:14:08.864 D/mediaservice(   62): MediaService::onStart
+01-01 00:14:08.912 D/mediaservice(   62): MediaService::onStart, start main thread
+01-01 00:14:08.916 D/mediaservice(   64): MediaService::MediaService
+01-01 00:14:09.120 D/mediaservice(   70): MediaService::MediaService
+[    5.459931] [TC:5459][TT:6] [SettingProvider] db version matched!01-01 00:14:09.328 D/mediaservice(   68): MediaService::MediaService
+
+01-01 00:14:09.432 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_db_ready_status]
+01-01 00:14:09.432 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_db_ready_status
+01-01 00:14:09.436 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:09.436 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+01-01 00:14:09.496 D/mediaservice(   64): MediaService::onStart
+01-01 00:14:09.496 D/mediaservice(   64): MediaService::onStart, start main thread
+[    5.870598] [UPDATE]:UDT_Service::onStart
+01-01 00[    5.876695] Linux key service Ready!
+:14:09.684 D/mediaservice(   70): MediaService::onStart
+01-01 00:14:09.692 D/mediaservice(   70): MediaService::onStart, start main thread
+01-01 00:14:09.700 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:09.700 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+01-01 00:14:09.748 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.748 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.748 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.784 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.788 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_system_language]
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_system_language]
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.788 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.804 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.804 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.808 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_miracast_name]
+01-01 00:14:09.808 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.808 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.808 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_miracast_name]
+01-01 00:14:09.808 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.812 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.832 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.832 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.832 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:09.832 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.832 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.832 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:09.836 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.836 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.856 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.856 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.856 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:09.856 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.856 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.856 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:09.856 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.860 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.868 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.868 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.868 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_link_miracast_status]
+01-01 00:14:09.868 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.868 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.868 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_link_miracast_status]
+01-01 00:14:09.868 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.872 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.892 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.892 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.892 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_time_year]
+01-01 00:14:09.896 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.896 D/mediaservice(   59): Med[    6.383387] Linux all service Ready!
+iaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.896 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_time_year]
+01-01 00:14:09.896 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:09.900 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:09.916 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:09.916 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:09.916 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_audio_index]
+01-01 00:14:09.916 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:09.916 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:09.916 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_audio_index]
+01-01 00:14:10.012 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.012 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_last_usb_source]
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_last_usb_source]
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.012 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.024 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.024 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.024 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.040 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.040 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_serial_number]
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_serial_number]
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.040 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.076 D/mediaservice(   68): MediaService::subscribeManager
+01-01 00:14:10.128 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.128 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.128 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:10.128 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.128 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.128 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:10.128 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.132 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.132 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_bt_name]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_bt_name]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.132 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.136 D/mediaservice(   59): MediaService::onCa[    6.818037] mn-sioext 9c01c300.serial: baudrate(9600)SIOTOP_CYCLE(828a)
+ll_
+01-01 00:14:10.136 D/medias[    6.827419] mn-sioext 9c01c300.serial: baudrate(9600)SIOTOP_CYCLE(828a)
+ervice(   59): MediaServ[    6.835805] mn-sioext 9c01c300.serial: baudrate(115200)SIOTOP_CYCLE(2035)
+ice::onCall_, call media provider
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.140 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.140 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.140 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_link_bt_status]
+01-01 00:14:[    6.926574] mn-sioext 9c01c300.serial: baudrate(3000000)SIOTOP_CYCLE(8001)
+10.144 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.144 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.144 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_link_bt_status]
+01-01 00:14:10.144 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.144 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.148 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.148 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.148 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.152 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.152 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_phonebook_download]
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_phonebook_download]
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.152 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.160 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.160 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.160 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.164 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.164 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_cmf1_status]
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_cmf1_status]
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:10.164 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::onCall_
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::onCall_, register proxy
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::newClient_
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::newClient_, client: 0x41703828
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::onConnect_
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::onCall_
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::onCall_, subscribe
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::newClient_
+01-01 00:14:10.396 D/mediaservice(   68): MediaService::newClient_, client: 0x42901a98
+01-01 00:14:10.396 D/mediaservice(   68): MediaClientManager::subscribe, map size: 0
+01-01 00:14:10.396 D/mediaservice(   68): MediaClientManager::subscribe, new client manager: 0x429093f8
+01-01 00:14:10.396 D/mediaservice(   68): MediaClientManager::subscribe, msg: msg://alone?0, client manager: 0x429093f8
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::onCall_
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::onCall_, register proxy
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::newClient_
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::newClient_, client: 0x43901a90
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::onConnect_
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::onCall_
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::onCall_, subscribe
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::newClient_
+01-01 00:14:10.396 D/mediaservice(   70): MediaService::newClient_, client: 0x41604430
+01-01 00:14:10.396 D/mediaservice(   70): MediaClientManager::subscribe, map size: 0
+01-01 00:14:10.396 D/mediaservice(   70): MediaClientManager::subscribe, new client manager: 0x41605188
+01-01 00:14:10.396 D/mediaservice(   70): MediaClientManager::subscribe, msg: msg://alone?0, client manager: 0x41605188
+01-01 00:14:10.400 D/mediaservice(   70): MediaService::onCall_
+01-01 00:14:10.400 D/mediaservice(   70): MediaService::onCall_
+01-01 00:14:10.400 D/mediaservice(   70): MediaService::onCall_
+01-01 00:14:10.744 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.744 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:10.744 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:10.744 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6648
+01-01 00:14:10.744 D/mediaservice(   59): MediaClientManager::subscribe, map size: 0
+01-01 00:14:10.744 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff66f0
+01-01 00:14:10.744 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_ready_status, client manager: 0x40ff66f0
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::newClient_, client: 0x42301d78
+01-01 00:14:10.748 D/mediaservice(   59): MediaClientManager::subscribe, map size: 1
+01-01 00:14:10.748 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x42313ef8
+01-01 00:14:10.748 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_system_language, client manager: 0x42313ef8
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:10.748 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6648
+01-01 00:14:10.748 D/mediaservice(   59): MediaClientManager::subscribe, map size: 2
+01-01 00:14:10.748 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_ready_status, client manager: 0x40ff66f0
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::onCall_, register proxy
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::newClient_, client: 0x42601900
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::onConnect_
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::onCall_, subscribe
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.008 D/mediaservice(   64): MediaService::newClient_, client: 0x41247f48
+01-01 00:14:11.008 D/mediaservice(   64): MediaClientManager::subscribe, map size: 0
+01-01 00:14:11.008 D/mediaservice(   64): MediaClientManager::subscribe, new client manager: 0x412495d0
+01-01 00:14:11.008 D/mediaservice(   64): MediaClientManager::subscribe, msg: msg://alone?0, client manager: 0x412495d0
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::onCall_, register proxy
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::newClient_, client: 0x41247f48
+01-01 00:14:11.016 D/mediaservice(   64): MediaService::onConnec[    7.725370] wlan: loading driver v4.2.78.63
+t_
+01-01 00:14:11.024 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.024 D/mediaservice(   59): MediaService::onCall_, call media[    7.742088] hifDeviceInserted: Dumping clocks (50000000,100000000)
+ provide[    7.748546] HIFDumpCCCR r
+01-01 00:14:11.024 D/mediaservice(   59): MediaProvider::onCommand code 000000(43) 008 uri [content://setting/setting?setting_ready_status]1(3)
+01-01 00:14:112(0) .024 D/mediaservice(   59): MediaProvider::onCom3(0) mand query got s4(0) elect[0]=[value]
+01-01 00:14:11.024 D/mediaserv5(0) ice(   59): MediaProvide6(0) r::onCommand query got w7(6) here=[key=?]
+01-01 00:14:11.0248(17)  D/mediaservice(   59): MediaProvider::onCommand query g9(0) ot whereArgs[0]=[setting_ready_sA(10) tatus]
+01-01 00B(0) :14:11.024 D/mediaservice(   59): MediaProvider:C(0) :onCommand got query sorOrder=[]D(0)
+01-01 00:14:11E(0) .024 D/mediaservice(   59): MediaProvider::onComF(0) mand query write cursor count [110(0) ] to reply
+01-011(0) 1 00:14:11.024 D/mediaservice(  12(1)  59): MediaService::onCall_
+01-01 00:14:11.024 D/medias13(3) ervice(   59): M14(7) ediaService::onCall_, call media provider
+01-0115(0)  00:14:11.024 D/mediaservice(   16(1) 59): MediaProvid
+er::onCommand code 00000008 uri [content://setting/setting?setting_link_miracast_status]
+01-01 00:14:11.024 D/mediaservice(   59): MediaProvider::onCommand query got s[    7.849785] AR6000: Set async interrupt delay clock as 2.
+elect[0]=[value]
+01-01 00:14:11.024 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:11.024 D/mediaservice(   59): MediaPro[    7.869107] ath_hif_sdio: HIF (Atheros/multi-bss)
+vider::onCommand query got whereArgs[0]=[setting_link_miracast_status]
+01-01 00:14:11.024 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.024 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.032 D/mediase[    7.899539] AR6000: configuration opcode 3 is not used for Linux SDIO stack
+rvice(   62): MediaService::onCall_
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::onCall_, register uri
+01-01 00:14:11.032 D/mediaservice(  [    7.919789] ============Firstly get  ol_download_firmware: Target address  Using 0x401fc0
+ 62): MediaService::newClient_
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::newClient_, client: 0x424019f8
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, map size: 0
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, new client manager: 0x42401a60
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, msg: msg://content://media/usbsd/device?usb1, client manager: 0x42401a60
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::onCall_
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::onCall_, register uri
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::newClient_
+01-01 00:14:11.032 D/mediaservice(   62): MediaService::newClient_, client: 0x410abd68
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, map size: 1
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, new client manager: 0x410ac790
+01-01 00:14:11.032 D/mediaservice(   62): MediaClientManager::subscribe, msg: msg://content://media/usbsd/device?usb2, client manager: 0x410ac790
+01-01 00:14:11.036 D/mediaservice(   62): MediaService::onCall_
+01-01 00:14:11.036 D/mediaservice(   62): MediaService::onCall_, call media provider
+01-01 00:14:11.036 D/mediaservice(   62): MediaProvider::onCommand code 00000008 uri [content://media/usbsd/device?usb1]
+01-01 00:14:11.036 D/mediaservice(   62): MediaProvider::onCommand query got where=[]
+01-01 00:14:11.036 D/mediaservice(   62): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.036 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.036 D/mediaservice(   64): MediaService::onCall_, subscribe
+01-01 00:14:11.036 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.036 D/mediaservice(   64): MediaService::newClient_, client: 0x42601900
+01-01 00:14:11.036 D/mediaservice(   64): MediaClientManager::subscribe, map size: 1
+01-01 00:14:11.036 D/mediaservice(   64): MediaClientManager::subscribe, new client manager: 0x42601fa0
+01-01 00:14:11.036 D/mediaservice(   64): MediaClientManager::subscribe, msg: msg://alone?1, client manager: 0x42601fa0
+01-01 00:14:11.044 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.048 D/mediaservice(   62): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.072 D/mediaservice(   62): MediaService::onCall_
+01-01 00:14:11.072 D/mediaservice(   62): MediaService::onCall_, call media provider
+01-01 00:14:11.072 D/mediaservice(   62): MediaProvider::onCommand code 00000008 uri [content://media/usbsd/device?usb2]
+01-01 00:14:11.072 D/mediaservice(   62): MediaProvider::onCommand query got where=[]
+01-01 00:14:11.072 D/mediaservice(   62): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.072 D/mediaservice(   62): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.080 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.080 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_ready_status]
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_ready_status]
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.080 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.084 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.084 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_cmf1_status]
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_cmf1_status]
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.084 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::onCall_, register proxy
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::newClient_, client: 0x41247f48
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::onConnect_
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::onCall_, subscribe
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.104 D/mediaservice(   64): MediaService::newClient_, client: 0x41247f48
+01-01 00:14:11.104 D/mediaservice(   64): MediaClientManager::subscribe, map size: 2
+01-01 00:14:11.104 D/mediaservice(   64): MediaClientManager::subscribe, new client manager: 0x412496a8
+01-01 00:14:11.104 D/mediaservice(   64): MediaClientManager::subscribe, msg: msg://alone?4, client manager: 0x412496a8
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::onCall_, register proxy
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::newClient_, client: 0x42601900
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::onConnect_
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::onCall_, subscribe
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.108 D/mediaservice(   64): MediaService::newClient_, client: 0x41247f48
+01-01 00:14:11.108 D/mediaservice(   64): MediaClientManager::subscribe, map size: 3
+01-01 00:14:11.108 D/mediaservice(   64): MediaClientManager::subscribe, msg: msg://alone?1, client manager: 0x42601fa0
+01-01 00:14:11.116 D/mediaservice(   68): MediaService::subscribeManager
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, mask:0, flag:0
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, code 44
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, next
+01-01 00:14:11.116 D/mediaservice(   68): MediaService::subscribeManager
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, mask:0, flag:0
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, code 46
+01-01 00:14:11.116 D/mediaservice(   68): MediaClientManager::notify, next
+01-01 00:14:11.128 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.128 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:11.128 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_carplay_serial_number]
+01-01 00:14:11.128 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:11.128 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:11.128 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_carplay_serial_number]
+01-01 00:14:11.128 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.132 D/mediaservice(   68): MediaService::newClient_
+01-01 00:14:11.132 D/mediaservice(   68): MediaService::newClient_, client: 0x4290a980
+01-01 00:14:11.132 D/mediaservice(   68): MediaService::onRequest_, id:19
+01-01 00:14:11.136 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.144 D/mediaservice(   68): MediaService::subscribeManager
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, mask:0, flag:0
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, code 48
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, next
+01-01 00:14:11.144 D/mediaservice(   68): MediaService::subscribeManager
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, mask:0, flag:0
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, code 19
+01-01 00:14:11.144 D/mediaservice(   68): MediaClientManager::notify, next
+01-01 00:14:11.144 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.144 D/mediaservice(   59): MediaService::onCall_, call media provider
+01-01 00:14:11.144 D/mediaservice(   59): MediaProvider::onCommand code 00000008 uri [content://setting/setting?setting_bdaddress]
+01-01 00:14:11.144 D/mediaservice(   59): MediaProvider::onCommand query got select[0]=[value]
+01-01 00:14:11.144 D/mediaservice(   59): MediaProvider::onCommand query got where=[key=?]
+01-01 00:14:11.144 D/mediaservice(   59): MediaProvider::onCommand query got whereArgs[0]=[setting_bdaddress]
+01-01 00:14:11.144 D/mediaservice(   59): MediaProvider::onCommand got query sorOrder=[]
+01-01 00:14:11.148 D/mediaservice(   59): MediaProvider::onCommand query write cursor count [1] to reply
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onCall_, register proxy
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::newClient_, client: 0x42601900
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onConnect_
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onCall_, subscribe
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::newClient_
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::newClient_, client: 0x42601900
+01-01 00:14:11.152 D/mediaservice(   64): MediaClientManager::subscribe, map size: 3
+01-01 00:14:11.152 D/mediaservice(   64): MediaClientManager::subscribe, msg: msg://alone?1, client manager: 0x42601fa0
+01-01 00:14:11.152 D/mediaservice(   64): MediaService::onCall_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c78
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, map size: 2
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_ready_status, client manager: 0x40ff66f0
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, map size: 2
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff6fe0
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_vehicle_speed, client manager: 0x40ff6fe0
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.156 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, map size: 3
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff70a8
+01-01 00:14:11.156 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_vehicle_gears, client manager: 0x40ff70a8
+01-01 00:14:11.160 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.160 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.160 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.160 D/mediaservice(   59): MediaService::newClient_, client: 0x42312b00
+01-01 00:14:11.160 D/mediaservice(   59): MediaClientManager::subscribe, map size: 4
+01-01 00:14:11.160 D/[    9.014459] AR6000: configuration opcode 7 is only used for RTOS systems, not Linux systems
+mediaser[    9.023086] AR6000: configuration opcode 5 is not used for Linux SDIO stack
+vice(   59): MediaClientManager::subscribe, new client manager: 0x42312e30
+01-01 00:14:11.160 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_illumination, client manager: 0x42312e30
+01-01 00:14:11.172 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.172 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.172 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.172 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.172 D/mediaservice(   59): MediaClientManager::subscribe,[    9.082896] cfg80211: Calling CRDA for country: US
+ map size: 5
+01-01 00:14:11.172 D/mediaservice(   59): [    9.092327] wlan: [20:E :VOS] create_linux_regulatory_entry,1398,error: wiphy->bands is NULL, i = 2
+MediaClientManager::subscribe, n[    9.104156] wlan: [403:E :WDA] wma_unified_vdev_create_send,5685: ID = 0 VAP Addr = 74:d7:ca:09:93:ad
+ew client manager: 0x40ff7150
+01-01 00:14:11.172 D/mediaservice(   59): MediaClientMana[    9.120740] wma_vdev_attach-6439: vdev_id 0, txrx_vdev_handle = d0fc8e00
+ger::subscribe, msg: msg://content://setting/setting?setting_cam[    9.133140] wlan: [401:E :HDD] wlan_hdd_tdls_init,435 TDLS not enabled (0) or FW doesn't support
+era_status, client manager: 0x40ff7150
+[    9.145569] wlan: [20:E :WDA] regdmn_set_dfs_region,580: dfs_region: 1
+01-01 00[    9.152320] cfg80211: Regulatory domain changed to country: US
+:14:11.1[    9.158765] cfg80211:  DFS Master region: FCC84 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.184 D/mediaservice(   59): MediaService::onCall_, register uri
+
+[    9.174303] wlan: [403:E :WDA] wma_unified_vdev_create_send,5685: ID = 1 VAP Addr = 76:d7:ca:8a:93:ad
+01-01 00:14:11.184 D/mediaservice(   59): MediaService::newClient_
+01-0[    9.189710] wma_vdev_attach-6439: vdev_id 1, txrx_vdev_handle = cf0ba800
+1 00:14:[    9.196972] wma_vdev_attach-6508: P2P Device: creating self peer 76:d7:ca:8a:93:ad, vdev_id 1
+11.184 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.184 D/mediaservice(   59): Me[    9.215787] wlan: [403:E :WDA] wma_create_peer,5952: Created peer with peer_addr 76:d7:ca:8a:93:ad vdev_id 1, peer_count - 1
+diaClientManager::subscribe, map size: 6
+01-01 00:14:11.184 D/mediaservice(   59): MediaClientManager::subscribe, new client ma[    9.237862] wlan: [401:E :HDD] wlan_hdd_tdls_init,435 TDLS not enabled (0) or FW doesn't support
+nager: 0x40ff71d8
+01-01 00:14:11.184 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_module_name, client manager: 0x40ff71d8
+01-01 00:14:11.188 D/mediaservice(   5[    9.265343] TXRX: ol_txrx_peer_find_add_id,373: Delete Peer cf32c000
+9): MediaService::onCall[    9.273817] Host SW:4.2.78.63, FW:2.0.1.809, HW:QCA6174_REV3_2
+_
+01-01 00:14:11.188 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.188 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.188 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01[    9.300393] SACHIN : hdd_set_btc_bt_wlan_interval : Inside
+-01 00:14:11.188 D/media[    9.307991] SACHIN : hdd_set_btc_bt_wlan_interval : coex_inquiry_sta_bt_interval : 30, coex_inquiry_sta_wlan_interval : 30
+service(   59): [    9.320418] SACHIN : hdd_set_btc_bt_wlan_interval : coex_inquiry_sap_bt_interval : 30, coex_inquiry_sap_wlan_interval : 30
+MediaClientManag[    9.332823] wlan: driver loaded
+er::subscribe, map size: 7
+01-01 00:14:11.188 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff72a0
+01-01 00:14:11.188 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_driving_regulation, client manager: 0x40ff72a0
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, map size: 8
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff7388
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_serial_number, client manager: 0x40ff7388
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.200 D/mediaservice(   59): MediaService::newClient_, client: 0x42312b00
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, map size: 9
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x42314270
+01-01 00:14:11.200 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_audio_type, client manager: 0x42314270
+01-01 00:14:11.212 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.212 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.212 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.212 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.212 D/mediaservice(   59): MediaClientManager::subscribe, map size: 10
+01-01 00:14:11.212 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff7470
+01-01 00:14:11.212 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_audio_priority, client manager: 0x40ff7470
+01-01 00:14:11.216 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.216 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.216 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.216 D/mediaservice(   59): MediaService::newClient_, client: 0x42312b00
+01-01 00:14:11.216 D/mediaservice(   59): MediaClientManager::subscribe, map size: 11
+01-01 00:14:11.216 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x42314300
+01-01 00:14:11.216 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_audio_takeconstraint, client manager: 0x42314300
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, map size: 12
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff7560
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_audio_borrowconstraint, client manager: 0x40ff7560
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, map size: 13
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff7640
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_video_type, client manager: 0x40ff7640
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.240 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, map size: 14
+01-01 00:14:11.240 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x40ff7728
+01-01 00:14:11.240[    9.749625] warning: `wpa_supplicant' uses 32-bit capabilities (legacy support in use)
+ D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_video_priority, client manager: 0x40ff7728
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.252 D/mediaservice(   59): MediaS[    9.787273] wma_vdev_detach-5790: P2P Device: removing self peer 76:d7:ca:8a:93:ad
+ervice::[    9.795093] TXRX: ol_txrx_peer_detach,1650:peer cf32c000 (76:d7:ca:8a:93:ad)
+newClien[    9.802701] wlan: [403:E :WDA] wma_remove_peer,1322: Removed peer with peer_addr 76:d7:ca:8a:93:ad vdevid 1 peer_count 0
+t_
+01-01 00:14:11.252 D/mediaservice(  [    9.816877] wma_vdev_detach-5840: vdev_id:1 vdev_hdl:cf0ba800
+ 59): Me[    9.823411] wlan: [0:E :WDA] wma_vdev_detach,5862,Call txrx detach with callback for vdev 1
+diaService::newC[    9.833381] wlan: [403:E :WDA] wma_unified_vdev_create_send,5685: ID = 1 VAP Addr = 76:d7:ca:8a:93:ad
+lient_, client: 0x42312b00
+01-01 00:14:11.252 D/mediaservice(   59): MediaClien[    9.849279] TXRX: ol_rx_peer_unmap_handler: Remove the ID 28 reference to peer cf32c000
+tManager::subscr[    9.858373] TXRX: ol_rx_peer_unmap_handler: Remove the ID 12 reference to peer cf32c000
+ibe, map[    9.867166] TXRX: Deleting peer cf32c000 (76:d7:ca:8a:93:ad)
+ size: 15
+01-01 00:14:11.252 D/mediaservice(   [    9.877397] wma_vdev_attach-6439: vdev_id 1, txrx_vdev_handle = cf3bc200
+59): Med[    9.884287] wma_vdev_attach-6508: P2P Device: creating self peer 76:d7:ca:8a:93:ad, vdev_id 1
+iaClientManager::subscribe, new client manager: 0x42314558
+01-01 00:14:11.252 D[    9.900127] wlan: [403:E :WDA] wma_create_peer,5952: Created peer with peer_addr 76:d7:ca:8a:93:ad vdev_id 1, peer_count - 1
+/mediaservice(  [    9.912564] wlan: [409:E :HDD] wlan_hdd_tdls_init,435 TDLS not enabled (0) or FW doesn't support
+ 59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_video_takeconstraint, client manager: 0x42314558
+01-0[    9.933339] wlan: [409:E :SME] PmcOffloadEnableStaModePowerSave: 3736: Failed to Queue Sta Mode Ps Request
+1 00:14:11.252 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.252 D[    9.957200] IPv6: ADDRCONF(NETDEV_UP): p2p0: link is not ready
+/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.2[    9.975993] cfg80211: Calling CRDA for country: ID
+52 D/mediaservice(   59): MediaClientManager::subscribe, map size: 16
+01-01 00:14:11.252 D/mediaservice[    9.989693] wlan: [20:E :VOS] create_linux_regulatory_entry,1398,error: wiphy->bands is NULL, i = 2
+(   59): MediaClientManager::subscribe, new client manager: 0x40ff7818
+01-01 00:14:11.252 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_carplay_video_borrowconstraint, client manager: 0x40ff7818
+01-01 00:14:11.252 D/m[   10.022506] wlan: [20:E :WDA] regdmn_set_dfs_region,580: dfs_region: 0
+ediaserv[   10.029179] cfg80211: Regulatory domain changed to country: ID
+ice(   5[   10.035598] cfg80211:  DFS Master region: unset9): MediaService::onCall_
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.252 D/mediaservice(   59): MediaService::newClient_, client: 0x40ff6c10
+01-01 00:14:11.252 D/mediaservice(   59): MediaClientManager::subscribe, map size: 17
+01-01 00:14:11.252 D/mediaservice(   59): MediaClientManager::subscribe, ne
+[   10.076631] wlan: [409:E :SME] PmcOffloadEnableStaModePowerSave: 3736: Failed to Queue Sta Mode Ps Request
+w client manager: 0x40ff7880
+01-01 00:14:11.252 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_bdaddress, client ma[   10.100797] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+nager: 0x40ff7880
+01-01 00:14:11.256 D/mediaservice(   59): MediaService::onCall_
+01-01 00:14:11.256 D/mediaservice(   59): MediaService::onCall_, register uri
+01-01 00:14:11.256 D/mediaservice(   59): MediaService::newClient_
+01-01 00:14:11.256 D/mediaservice(   59): MediaService::newClient_, client: 0x42312b00
+01-01 00:14:11.256 D/mediaservice(   59): MediaClientManager::subscribe, map size: 18
+01-01 00:14:11.256 D/mediaservice(   59): MediaClientManager::subscribe, new client manager: 0x42315190
+01-01 00:14:11.256 D/mediaservice(   59): MediaClientManager::subscribe, msg: msg://content://setting/setting?setting_cmf1_status, client manager: 0x42315190
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::onCall_
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::onCall_, register uri
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::newClient_
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::newClient_, client: 0x410ac640
+01-01 00:14:11.380 D/mediaservice(   62): MediaClientManager::subscribe, map size: 2
+01-01 00:14:11.380 D/mediaservice(   62): MediaClientManager::subscribe, msg: msg://content://media/usbsd/device?usb1, client manager: 0x42401a60
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::onCall_
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::onCall_, register uri
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::newClient_
+01-01 00:14:11.380 D/mediaservice(   62): MediaService::newClient_, client: 0x41200478
+01-01 00:14:11.380 D/mediaservice(   62): MediaClientManager::subscribe, map size: 2
+01-01 00:14:11.380 D/mediaservice(   62): MediaClientManager::subscribe, msg: msg://content://media/usbsd/device?usb2, client manager: 0x410ac790
+01-01 00:14:11.648 D/mediaservice(   70): MediaService::subscribeManager
+01-01 00:14:11.648 D/mediaservice(   70): MediaClientManager::notify, mask:0, flag:0
+01-01 00:14:11.648 D/mediaservice(   70): MediaClientManager::notify, code 132
+01-01 00:14:11.648 D/mediaservice(   70): MediaClientManager::notify, next
+01-01 00:14:12.696 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:12.696 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+01-01 00:14:15.700 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:15.700 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+[   13.171527] last acc off reason:0, micon reason:8
+01-01 00:14:18.696 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:18.696 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+
+
+
+01-01 00:14:21.696 D/mediaservice(   59): MediaProvider::notifyUpdate variant uri: [content://setting/setting?setting_time_second]
+01-01 00:14:21.696 D/mediaservice(   59): MediaProvider::notify, type: 16, uri: content://setting/setting?setting_time_second
+
