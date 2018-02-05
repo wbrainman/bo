@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+
 #define BUFFER_SIZE 2000
 int main()
 {
@@ -20,7 +21,7 @@ int main()
 	char buf[BUFFER_SIZE] = {0};
 	unsigned int n;
 
-#if 1	
+#if 0	
 	{
 		struct netent *netInfo;	
 		int addr;
@@ -58,6 +59,16 @@ int main()
 
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
+    {
+        #include <net/if.h>
+        #include <sys/ioctl.h>
+        struct ifreq ifr;
+        strcpy(ifr.ifr_name, "eth0");
+        if(ioctl(server_sockfd, SIOCGIFADDR, &ifr) < 0)
+            perror("ioctl");
+        printf("%s\n", inet_ntoa(((struct sockaddr_in*)&(ifr.ifr_addr))->sin_addr));
+    
+    }
 
     //3. Name the socket:
 	server_address.sin_family = AF_INET;
