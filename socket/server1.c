@@ -7,9 +7,45 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <net/if.h>
+#include <sys/ioctl.h>
 
 
 #define BUFFER_SIZE 2000
+#define MAX_INTERFACE 16
+
+static char*  get_if_info(int fd)
+{
+    int if_num = 0;
+    struct ifreq buf[MAX_INTERFACE];
+    struct ifconf ifc;
+    struct ifreq ifr;
+    
+    ifc.ifc_len = sizeof(buf);
+    ifc.ifc_buf = (caddr_t)buf;
+
+    if(ioctl(fd, SIOCGIFCONF, (char*)&ifc)) {
+        perror("get if config"); 
+    }
+
+    if_num = ifc.ifc_len/sizeof(struct ifreq);
+
+    printf("interface num = %d\n\n",if_num);
+
+    while(if_num --) {
+
+        printf("net dev %d name = %s\n",if_num, buf[if_num].ifr_name);
+
+        if(ioctl(fd, SIOCGIFADDR, &buf[if_num]) < 0) { 
+            perror("ioctl");
+        }
+        printf("%s\n\n", inet_ntoa(((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr));
+    }
+
+
+}
+
+
 int main()
 {
 
@@ -21,54 +57,14 @@ int main()
 	char buf[BUFFER_SIZE] = {0};
 	unsigned int n;
 
-#if 0	
-	{
-		struct netent *netInfo;	
-		int addr;
-
-		netInfo = getnetent();
-#if 0	
-        char myname[256];
-		const char *pName;
-        gethostname(myname, 255);
-		pName = myname;
-		printf("get host name: %s\n",pName);
-		netInfo = getnetbyname(pName);
-#endif
-
-		if(!netInfo) {
-			fprintf(stderr,"get netInfo error\n");	
-			exit(1);
-		}
-
-		printf("get net info:\n");
-		printf("	network name: %s\n",netInfo->n_name);
-
-		while(*(netInfo->n_aliases)) {
-			printf("	network alias name: %s\n",*(netInfo->n_aliases));
-		}
-
-		printf("	address type: %d\n",netInfo->n_addrtype);
-		addr = ntohl(netInfo->n_net);
-		printf("	addr: %s\n",inet_ntoa(*(struct in_addr *)&addr));
-	
-	}
-#endif
-
     //2. Remove any old sockets and create an unnamed socket for the server:
 
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
-    {
-        #include <net/if.h>
-        #include <sys/ioctl.h>
-        struct ifreq ifr;
-        strcpy(ifr.ifr_name, "eth0");
-        if(ioctl(server_sockfd, SIOCGIFADDR, &ifr) < 0)
-            perror("ioctl");
-        printf("%s\n", inet_ntoa(((struct sockaddr_in*)&(ifr.ifr_addr))->sin_addr));
+    //printf("if num %d\n",get_if_info(server_sockfd);
+    get_if_info(server_sockfd);
+
     
-    }
 
     //3. Name the socket:
 	server_address.sin_family = AF_INET;
