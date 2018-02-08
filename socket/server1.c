@@ -14,6 +14,9 @@
 #define BUFFER_SIZE 2000
 #define MAX_INTERFACE 16
 
+static char*  get_if_info(int fd);
+static void  get_if_status(unsigned int flag);
+
 static char*  get_if_info(int fd)
 {
     int if_num = 0;
@@ -39,12 +42,45 @@ static char*  get_if_info(int fd)
         if(ioctl(fd, SIOCGIFADDR, &buf[if_num]) < 0) { 
             perror("ioctl");
         }
-        printf("%s\n\n", inet_ntoa(((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr));
+        /*get network interface status*/
+        get_if_status(buf[if_num].ifr_flags);
+
+        /*get network interface address*/
+        printf("ip type: %d\n\n", ((struct sockaddr_in*)&buf[if_num].ifr_addr)->sin_family);
+        printf("ip addr: %s\n\n", inet_ntoa(((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr));
+        printf("ip addr: %d\n\n", ((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr.s_addr);
+        printf("ip addr: %d\n\n", htonl(INADDR_LOOPBACK));
     }
 
 
 }
 
+static void  get_if_status(unsigned int flag)
+{
+    if(flag & IFF_UP) {
+        printf("is up\n");
+    }
+
+    if(flag & IFF_BROADCAST) {
+        printf("is broadcast\n");
+    }
+
+    if(flag & IFF_LOOPBACK) {
+        printf("is loop back\n");
+    }
+
+    if(flag & IFF_POINTOPOINT) {
+        printf("is point to point\n");
+    }
+
+    if(flag & IFF_RUNNING) {
+        printf("is running\n");
+    }
+
+    if(flag & IFF_PROMISC) {
+        printf("is promisc\n");
+    }
+}
 
 int main()
 {
