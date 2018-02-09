@@ -152,15 +152,22 @@ int main()
 		printf("	addr: %s\n",inet_ntoa(client_address.sin_addr));
 
 		if(fork() == 0) {
+            printf("in child process\n");
+			if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
+                printf("recv ID : %s\n",data);
+
+            }
+#if 0
 			while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {
 					
 				send(client_sockfd, data, strlen(data), 0);
 				memset(data, 0,BUFFER_SIZE);
 			}
 			close(client_sockfd);
+#endif
 		}
 		else {
-			close(client_sockfd);
+            printf("in main process\n");
 		}
 
     }
