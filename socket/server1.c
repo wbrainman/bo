@@ -14,13 +14,17 @@
 #define BUFFER_SIZE 2000
 #define MAX_INTERFACE 16
 
-static char*  get_if_info(int fd);
+static struct sockaddr_in*  get_if_info(int fd);
+static void  show_if_info(int fd, int if_num, struct ifreq* pbuf);
 static void  get_if_status(unsigned int flag);
 
-static char*  get_if_info(int fd)
+
+struct ifreq buf[MAX_INTERFACE];
+
+
+static struct sockaddr_in*  get_if_info(int fd)
 {
     int if_num = 0;
-    struct ifreq buf[MAX_INTERFACE];
     struct ifconf ifc;
     struct ifreq ifr;
     
@@ -35,23 +39,24 @@ static char*  get_if_info(int fd)
 
     printf("interface num = %d\n\n",if_num);
 
-    while(if_num --) {
+    show_if_info(fd, if_num, buf);
 
-        printf("net dev %d name = %s\n",if_num, buf[if_num].ifr_name);
+    while(if_num --) {
 
         if(ioctl(fd, SIOCGIFADDR, &buf[if_num]) < 0) { 
             perror("ioctl");
         }
-        /*get network interface status*/
-        get_if_status(buf[if_num].ifr_flags);
+
+        if(htonl(INADDR_LOOPBACK) == ((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr.s_addr) {
+            continue; 
+        }
 
         /*get network interface address*/
         printf("ip type: %d\n\n", ((struct sockaddr_in*)&buf[if_num].ifr_addr)->sin_family);
         printf("ip addr: %s\n\n", inet_ntoa(((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr));
-        printf("ip addr: %d\n\n", ((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr.s_addr);
-        printf("ip addr: %d\n\n", htonl(INADDR_LOOPBACK));
-    }
 
+        return (struct sockaddr_in*)&(buf[if_num].ifr_addr);
+    }
 
 }
 
@@ -82,15 +87,35 @@ static void  get_if_status(unsigned int flag)
     }
 }
 
+static void  show_if_info(int fd, int if_num, struct ifreq* pbuf)
+{
+    while(if_num --) {
+
+        printf("net dev %d name = %s\n",if_num, pbuf[if_num].ifr_name);
+
+        if(ioctl(fd, SIOCGIFADDR, &pbuf[if_num]) < 0) { 
+            perror("ioctl");
+        }
+        /*get network interface status*/
+        get_if_status(pbuf[if_num].ifr_flags);
+
+        /*get network interface address*/
+        printf("ip type: %d\n", ((struct sockaddr_in*)&pbuf[if_num].ifr_addr)->sin_family);
+        printf("ip addr: %s\n", inet_ntoa(((struct sockaddr_in*)&(pbuf[if_num].ifr_addr))->sin_addr));
+        printf("\n\n");
+    }
+
+}
+
 int main()
 {
 
     int server_sockfd, client_sockfd;
     int server_len, client_len;
-	struct sockaddr_in server_address;
+	struct sockaddr_in *pServer_addr;
 	struct sockaddr_in client_address;
 
-	char buf[BUFFER_SIZE] = {0};
+	char data[BUFFER_SIZE] = {0};
 	unsigned int n;
 
     //2. Remove any old sockets and create an unnamed socket for the server:
@@ -98,18 +123,18 @@ int main()
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
     //printf("if num %d\n",get_if_info(server_sockfd);
-    get_if_info(server_sockfd);
+    pServer_addr = get_if_info(server_sockfd);
 
     
 
     //3. Name the socket:
-	server_address.sin_family = AF_INET;
-	server_address.sin_addr.s_addr = inet_addr("192.168.0.106");
-	server_address.sin_port = htons(9734);
+	//pServer_addr->sin_family = AF_INET;
+	//pServer_addr->sin_addr.s_addr = inet_addr("192.168.0.106");
+	pServer_addr->sin_port = htons(9734);
 
-    server_len = sizeof(server_address);
+    server_len = sizeof(struct sockaddr_in);
 
-    bind(server_sockfd, (struct sockaddr *)&server_address, server_len);
+    bind(server_sockfd, (struct sockaddr *)pServer_addr, server_len);
 
     //4. Create a connection queue and wait for clients:
     listen(server_sockfd, 5);
@@ -127,10 +152,10 @@ int main()
 		printf("	addr: %s\n",inet_ntoa(client_address.sin_addr));
 
 		if(fork() == 0) {
-			while(n = read(STDIN_FILENO, buf, BUFFER_SIZE) > 0) {
+			while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {
 					
-				send(client_sockfd, buf, strlen(buf), 0);
-				memset(buf, 0,BUFFER_SIZE);
+				send(client_sockfd, data, strlen(data), 0);
+				memset(data, 0,BUFFER_SIZE);
 			}
 			close(client_sockfd);
 		}
