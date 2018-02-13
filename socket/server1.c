@@ -118,6 +118,13 @@ int main()
 	char data[BUFFER_SIZE] = {0};
 	unsigned int n;
 
+    typedef enum {
+        EN_CLIENT_NONE,
+        EN_CLIENT_RECV,
+        EN_CLIENT_SEND
+    }CLIENT_TYPE;
+
+    CLIENT_TYPE clientType = EN_CLIENT_NONE;
     //2. Remove any old sockets and create an unnamed socket for the server:
 
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -150,21 +157,38 @@ int main()
 		printf("	type: %d\n",client_address.sin_family);
 		printf("	port: %d\n",ntohs(client_address.sin_port));
 		printf("	addr: %s\n",inet_ntoa(client_address.sin_addr));
+		printf("\n");
+
+        if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
+            if(0 != strcmp(data, "recv")) {
+                printf("this is recv %s\n",data);
+                clientType = EN_CLIENT_RECV;
+            }
+
+            if(0 != strcmp(data, "send")) {
+                printf("this is send %s\n",data);
+                clientType = EN_CLIENT_SEND;
+            }
+        }
 
 		if(fork() == 0) {
             printf("in child process\n");
-			if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
-                printf("recv ID : %s\n",data);
 
+            switch(clientType) {
+                case EN_CLIENT_NONE: 
+                    break;
+                case EN_CLIENT_RECV: 
+
+                    break;
+                case EN_CLIENT_SEND: 
+                    while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {
+                        send(client_sockfd, data, strlen(data), 0);
+                        memset(data, 0,BUFFER_SIZE);
+                    }
+                    break;
+                default:
+                    break;
             }
-#if 0
-			while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {
-					
-				send(client_sockfd, data, strlen(data), 0);
-				memset(data, 0,BUFFER_SIZE);
-			}
-			close(client_sockfd);
-#endif
 		}
 		else {
             printf("in main process\n");
