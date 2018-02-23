@@ -178,7 +178,12 @@ int main()
                 case EN_CLIENT_NONE: 
                     break;
                 case EN_CLIENT_RECV: 
-
+					while (0 < recv(client_sockfd, data, BUFFER_SIZE, 0)) {
+					  //if(0 < recv(sockfd, buf, BUFFER_SIZE, 0)) {
+						printf("recv data : %s\n", data);
+						memset((void*)data, 0, BUFFER_SIZE);
+					 // }
+					}
                     break;
                 case EN_CLIENT_SEND: 
                     while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {

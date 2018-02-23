@@ -31,12 +31,12 @@ int main()
         exit(1);
     }
 
-    while ( 1 ) {
-      if(0 < recv(sockfd, buf, BUFFER_SIZE, 0)) {
-        printf("recv data : %s\n", buf);
-        //memset((void*)buf, 0, BUFFER_SIZE);
-      }
-    }
+	send(sockfd, "send", strlen("send"), 0);
+
+	while(read(STDIN_FILENO, buf, BUFFER_SIZE) > 0) {
+		send(sockfd, buf, strlen(buf), 0);
+		memset(buf, 0,BUFFER_SIZE);
+	}
 
     printf("NO DATA\n");
     
