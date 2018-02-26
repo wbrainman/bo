@@ -4,11 +4,10 @@
 #include <string.h>
 #include <pthread.h>
 
-#include <recvClient.h>
-#include <sendClient.h>
+#include "recvClient.h"
+#include "sendClient.h"
 
 #define THREAD_NUM 2
-
 
 int main()
 {
@@ -45,4 +44,5 @@ int main()
 	printf("All done !!!\n");
 
 }
+
 
