@@ -9,6 +9,9 @@
 #include <netdb.h>
 #include <net/if.h>
 #include <sys/ioctl.h>
+#include <pthread.h>
+#include <serverRecv.h>
+#include <serverSend.h>
 
 
 #define BUFFER_SIZE 2000
@@ -109,49 +112,31 @@ static void  show_if_info(int fd, int if_num, struct ifreq* pbuf)
 
 int main()
 {
-
     int server_sockfd, client_sockfd;
-    int server_len, client_len;
 	struct sockaddr_in *pServer_addr;
 	struct sockaddr_in client_address;
+    int server_len = sizeof(struct sockaddr_in);
+    int client_len = sizeof(struct sockaddr_in);
 
 	char data[BUFFER_SIZE] = {0};
-	unsigned int n;
 
-    typedef enum {
-        EN_CLIENT_NONE,
-        EN_CLIENT_RECV,
-        EN_CLIENT_SEND
-    }CLIENT_TYPE;
 
-    CLIENT_TYPE clientType = EN_CLIENT_NONE;
-    //2. Remove any old sockets and create an unnamed socket for the server:
+    int res;
+    pthread_t thread_server_recv;
+    pthread_t thread_server_send;
 
     server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
-    //printf("if num %d\n",get_if_info(server_sockfd);
     pServer_addr = get_if_info(server_sockfd);
-
-    
-
-    //3. Name the socket:
-	//pServer_addr->sin_family = AF_INET;
-	//pServer_addr->sin_addr.s_addr = inet_addr("192.168.0.106");
 	pServer_addr->sin_port = htons(9734);
-
-    server_len = sizeof(struct sockaddr_in);
+    client_len = sizeof(client_address);
 
     bind(server_sockfd, (struct sockaddr *)pServer_addr, server_len);
 
-    //4. Create a connection queue and wait for clients:
     listen(server_sockfd, 5);
 
     while(1) {
-
         printf("server waiting\n");
-
-        //5. Accept a connection:
-        client_len = sizeof(client_address);
         client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
 		printf("client info:\n");
 		printf("	type: %d\n",client_address.sin_family);
@@ -162,42 +147,23 @@ int main()
         if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
             if(0 != strcmp(data, "recv")) {
                 printf("this is recv %s\n",data);
-                clientType = EN_CLIENT_RECV;
+
+                res = pthread_create(&thread_server_recv, NULL, server_recv, (void*)client_sockfd); 
+                if(res != 0) {
+                    perror("Thread server recv creat failed"); 
+                    exit(EXIT_FAILURE);
+                }
             }
 
             if(0 != strcmp(data, "send")) {
                 printf("this is send %s\n",data);
-                clientType = EN_CLIENT_SEND;
+                res = pthread_create(&thread_server_send, NULL, server_send, (void*)client_sockfd); 
+                if(res != 0) {
+                    perror("Thread server send creat failed"); 
+                    exit(EXIT_FAILURE);
+                }
             }
         }
-
-		if(fork() == 0) {
-            printf("in child process\n");
-
-            switch(clientType) {
-                case EN_CLIENT_NONE: 
-                    break;
-                case EN_CLIENT_RECV: 
-					while (0 < recv(client_sockfd, data, BUFFER_SIZE, 0)) {
-					  //if(0 < recv(sockfd, buf, BUFFER_SIZE, 0)) {
-						printf("recv data : %s\n", data);
-						memset((void*)data, 0, BUFFER_SIZE);
-					 // }
-					}
-                    break;
-                case EN_CLIENT_SEND: 
-                    while(n = read(STDIN_FILENO, data, BUFFER_SIZE) > 0) {
-                        send(client_sockfd, data, strlen(data), 0);
-                        memset(data, 0,BUFFER_SIZE);
-                    }
-                    break;
-                default:
-                    break;
-            }
-		}
-		else {
-            printf("in main process\n");
-		}
 
     }
 

@@ -21,13 +21,17 @@ void *thread_recv(void *arg)
     int result;
     char buf[BUFFER_SIZE] = {0};
 
+    printf("thread_recv\n");
+
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr("192.168.0.106");
+    //address.sin_addr.s_addr = inet_addr("192.168.0.106");
+    address.sin_addr.s_addr = inet_addr("192.168.97.66");
     address.sin_port = htons(9734);
 
     len = sizeof(address);
+
 
     result = connect(sockfd, (struct sockaddr *)&address, len);
     if(result == -1) {

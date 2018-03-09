@@ -1,5 +1,5 @@
 
-all:	client
+all:	install
 
 CC = gcc
 
@@ -19,17 +19,32 @@ recvClient.o:	recvClient.c recvClient.h
 sendClient.o:	sendClient.c sendClient.h
 	$(CC) -I$(INCLUDE) -c sendClient.c
 
+
+
+server:	server.o serverRecv.o serverSend.o
+	$(CC) -o server server.o serverRecv.o serverSend.o -lpthread
+
+server.o:	server.c serverRecv.h serverSend.h
+	$(CC) -I$(INCLUDE) -c server.c
+	
+serverRecv.o:	serverRecv.c serverRecv.h
+	$(CC) -I$(INCLUDE) -c serverRecv.c
+	
+serverSend.o:	serverSend.c serverSend.h
+	$(CC) -I$(INCLUDE) -c serverSend.c
+
 clean:
 	@ -rm $(INSTDIR) -r
 
-install:	client
+install:	client server
 	@if [ -d $(INSTDIR) ]; then \
-		echo "$(INSTDIR)exit"; \
+		echo "$(INSTDIR)exist"; \
 	else \
 		echo "$(INSTDIR)created"; \
 		mkdir $(INSTDIR); \
 	fi 
-	@	cp client $(INSTDIR); \
-		cp *.o $(INSTDIR); \
+	@	mv client $(INSTDIR); \
+		mv server $(INSTDIR); \
+		mv *.o $(INSTDIR); \
 		echo "install target to $(INSTDIR)"; \
 	
