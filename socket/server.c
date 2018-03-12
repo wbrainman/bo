@@ -40,7 +40,8 @@ static struct sockaddr_in*  get_if_info(int fd)
 
     if_num = ifc.ifc_len/sizeof(struct ifreq);
 
-    printf("interface num = %d\n\n",if_num);
+    printf("*************************************************************\n");
+    printf("interface num = %d\n",if_num);
 
     show_if_info(fd, if_num, buf);
 
@@ -55,8 +56,11 @@ static struct sockaddr_in*  get_if_info(int fd)
         }
 
         /*get network interface address*/
+        printf("###################################\n");
+        printf("get network interface address\n");
         printf("ip type: %d\n\n", ((struct sockaddr_in*)&buf[if_num].ifr_addr)->sin_family);
         printf("ip addr: %s\n\n", inet_ntoa(((struct sockaddr_in*)&(buf[if_num].ifr_addr))->sin_addr));
+        printf("###################################\n");
 
         return (struct sockaddr_in*)&(buf[if_num].ifr_addr);
     }
@@ -105,8 +109,9 @@ static void  show_if_info(int fd, int if_num, struct ifreq* pbuf)
         /*get network interface address*/
         printf("ip type: %d\n", ((struct sockaddr_in*)&pbuf[if_num].ifr_addr)->sin_family);
         printf("ip addr: %s\n", inet_ntoa(((struct sockaddr_in*)&(pbuf[if_num].ifr_addr))->sin_addr));
-        printf("\n\n");
     }
+    printf("*************************************************************\n");
+    printf("\n\n");
 
 }
 
@@ -136,6 +141,8 @@ int main()
     listen(server_sockfd, 5);
 
     while(1) {
+        printf("\n");
+        printf("*************************************************************\n");
         printf("server waiting\n");
         client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
 		printf("client info:\n");
@@ -145,19 +152,18 @@ int main()
 		printf("\n");
 
         if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
-            if(0 != strcmp(data, "recv")) {
-                printf("this is recv %s\n",data);
-
-                res = pthread_create(&thread_server_recv, NULL, server_recv, (void*)client_sockfd); 
+            if(0 == strcmp(data, "recv")) {
+                printf("we can send now\n");
+                res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&client_sockfd)); 
                 if(res != 0) {
                     perror("Thread server recv creat failed"); 
                     exit(EXIT_FAILURE);
                 }
             }
 
-            if(0 != strcmp(data, "send")) {
-                printf("this is send %s\n",data);
-                res = pthread_create(&thread_server_send, NULL, server_send, (void*)client_sockfd); 
+            if(0 == strcmp(data, "send")) {
+                printf("we can recv now\n");
+                res = pthread_create(&thread_server_send, NULL, server_recv, (void*)(&client_sockfd)); 
                 if(res != 0) {
                     perror("Thread server send creat failed"); 
                     exit(EXIT_FAILURE);
