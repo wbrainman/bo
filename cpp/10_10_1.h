@@ -1,6 +1,7 @@
-#include <string.h>
+#include <string>
 
-class Count {
+class Count 
+{
 	private:
 		std::string	m_name;
 		std::string	m_countNum;
@@ -13,5 +14,5 @@ class Count {
 		void show();
 		void deposite(const int in);
 		void withdraw(const int out);
-}
+};
 
