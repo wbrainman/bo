@@ -152,6 +152,7 @@ int main()
 		printf("\n");
 
         if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
+#if 1
             if(0 == strcmp(data, "recv")) {
                 printf("we can send now\n");
                 res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&client_sockfd)); 
@@ -160,6 +161,7 @@ int main()
                     exit(EXIT_FAILURE);
                 }
             }
+//#else
 
             if(0 == strcmp(data, "send")) {
                 printf("we can recv now\n");
@@ -169,6 +171,8 @@ int main()
                     exit(EXIT_FAILURE);
                 }
             }
+#endif
+
         }
 
     }

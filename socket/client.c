@@ -23,11 +23,13 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    res = pthread_create(&t_recv, NULL, thread_send, NULL); 
+#if 1
+    res = pthread_create(&t_send, NULL, thread_send, NULL); 
     if(res != 0) {
         perror("Thread send creat failed"); 
         exit(EXIT_FAILURE);
     }
+#endif
 
 	res = pthread_join(t_recv, &thread_result);
     if(res != 0) {

@@ -26,7 +26,7 @@ void *server_send(void *arg)
         printf("in server send n = %d\n",n);
         send(client_sockfd, data, strlen(data), 0);
         perror("in server send:");
-        memset(data, 0,BUFFER_SIZE);
+        //memset(data, 0,BUFFER_SIZE);
     }
 
 }

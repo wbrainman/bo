@@ -23,7 +23,7 @@ void *server_recv(void *arg)
     int client_sockfd = *(int*)arg;
 
     while (0 < recv(client_sockfd, data, BUFFER_SIZE, 0)) {
-        printf("recv data : %s\n", data);
+        printf("server recv data : %s\n", data);
         memset((void*)data, 0, BUFFER_SIZE);
     }
 

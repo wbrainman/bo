@@ -40,12 +40,11 @@ void *thread_recv(void *arg)
     }
 
 	send(sockfd, "recv", strlen("recv"), 0);
+    perror("client recv declare:");
 
-    while ( 1 ) {
-      if(0 < recv(sockfd, buf, BUFFER_SIZE, 0)) {
-        printf("recv data : %s\n", buf);
+    while (0 < recv(sockfd, buf, BUFFER_SIZE, 0)) {
+        printf("client recv data : %s\n", buf);
         memset((void*)buf, 0, BUFFER_SIZE);
-      }
     }
 
     printf("NO DATA\n");
