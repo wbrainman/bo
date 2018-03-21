@@ -7,6 +7,7 @@ class Count
 		std::string	m_countNum;
 		int 		m_fund;
 
+
 	public:
 		Count();
 		Count(const std::string &name, const std::string &countNum, const int fund);
