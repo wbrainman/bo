@@ -19,12 +19,13 @@ void *server_send(void *arg)
     }
 
 	char data[BUFFER_SIZE] = {0};
-    int client_sockfd = *(int*)arg;
+    int sockfd = *(int*)arg;
     int n = 0;
+	printf("server_send, sockfd = %d\n",sockfd);
 
     while((n = read(STDIN_FILENO, data, BUFFER_SIZE)) > 0) {
         printf("in server send n = %d\n",n);
-        send(client_sockfd, data, strlen(data), 0);
+        send(sockfd, data, strlen(data), 0);
         perror("in server send:");
         //memset(data, 0,BUFFER_SIZE);
     }

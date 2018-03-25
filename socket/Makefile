@@ -5,7 +5,7 @@ CC = gcc
 
 INCLUDE = .
 
-INSTDIR	= /home/wangbo/MY/socket/out  
+INSTDIR	= $(PWD)/out  
 
 client:	client.o recvClient.o sendClient.o
 	$(CC) -o client client.o recvClient.o sendClient.o -lpthread

@@ -20,9 +20,10 @@ void *server_recv(void *arg)
     }
 
 	char data[BUFFER_SIZE] = {0};
-    int client_sockfd = *(int*)arg;
+    int sockfd = *(int*)arg;
+	printf("server_recv, sockfd = %d\n",sockfd);
 
-    while (0 < recv(client_sockfd, data, BUFFER_SIZE, 0)) {
+    while (0 < recv(sockfd, data, BUFFER_SIZE, 0)) {
         printf("server recv data : %s\n", data);
         memset((void*)data, 0, BUFFER_SIZE);
     }

@@ -118,6 +118,7 @@ static void  show_if_info(int fd, int if_num, struct ifreq* pbuf)
 int main()
 {
     int server_sockfd, client_sockfd;
+    int client_send, client_recv;
 	struct sockaddr_in *pServer_addr;
 	struct sockaddr_in client_address;
     int server_len = sizeof(struct sockaddr_in);
@@ -154,8 +155,9 @@ int main()
         if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
 #if 1
             if(0 == strcmp(data, "recv")) {
-                printf("we can send now\n");
-                res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&client_sockfd)); 
+				client_send = client_sockfd;
+                printf("we can send now, sockfd = %d\n",client_send);
+                res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&client_send)); 
                 if(res != 0) {
                     perror("Thread server recv creat failed"); 
                     exit(EXIT_FAILURE);
@@ -164,8 +166,9 @@ int main()
 //#else
 
             if(0 == strcmp(data, "send")) {
-                printf("we can recv now\n");
-                res = pthread_create(&thread_server_send, NULL, server_recv, (void*)(&client_sockfd)); 
+				client_recv = client_sockfd;
+                printf("we can recv now, sockfd = %d\n",client_recv);
+                res = pthread_create(&thread_server_send, NULL, server_recv, (void*)(&client_recv)); 
                 if(res != 0) {
                     perror("Thread server send creat failed"); 
                     exit(EXIT_FAILURE);
