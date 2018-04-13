@@ -1,9 +1,10 @@
 #include "10_10_1.h"
 #include "10_10_2.h"
 #include "10_10_3.h"
+#include "10_10_4.h"
 #include <iostream>
 
-#define C_10_10_3
+#define C_10_10_4
 
 #ifdef C_10_10_1 
 int main()
@@ -54,5 +55,21 @@ int main()
 	Golf g3;
 	g3.setGolf();
 	g3.show();
+}
+#endif
+
+#ifdef C_10_10_4 
+int main()
+{
+	Sales s1;
+	s1.show();
+
+    const double ar[4] = {1.1, 2.2, 3.3, 4.4};
+	Sales s2(ar, 4);
+	s2.show();	
+
+	Sales s3;
+    s3.setSales();
+	s3.show();	
 }
 #endif

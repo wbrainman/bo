@@ -7,8 +7,9 @@ INCLUDE = .
 
 INSTDIR	= $(PWD)/out  
 
-main:	main.cpp 10_10_3.h 10_10_3.cpp
-	$(CC) -o main main.cpp 10_10_3.cpp 
+#main:	main.cpp 10_10_3.h 10_10_3.cpp
+main:	main.cpp 10_10_4.h 10_10_4.cpp
+	$(CC) -o main main.cpp 10_10_4.cpp 
 
 #main.o:	main.cpp 10_10_3.h
 #	$(CC) -I$(INCLUDE) -c  main.cpp 
