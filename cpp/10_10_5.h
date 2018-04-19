@@ -1,23 +1,29 @@
 //10_10_5.h
 
-#ifndef 10_10_5_H
-#define 10_10_5_H
 
-typedef struct customer {
+typedef struct _customer {
 
     char fullname[35];
     double payment;
-}
+}customer;
 
 typedef customer Item;
 
 class Stack {
+    public:
+        Stack();
+        ~Stack();
+        bool isFull();
+        bool isEmpty();
+        bool push(const Item &item);
+        bool pop(Item &item);
+        void show();
+    private:
+        enum {MAX = 10};
+        int m_top;
+        Item m_item[MAX];
+        double m_sum;
+};
 
 
-
-
-}
-
-
-#endif
 
