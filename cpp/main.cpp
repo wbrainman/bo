@@ -3,9 +3,10 @@
 #include "10_10_3.h"
 #include "10_10_4.h"
 #include "10_10_5.h"
+#include "10_10_6.h"
 #include <iostream>
 
-#define C_10_10_5
+#define C_10_10_6
 
 #ifdef C_10_10_1 
 int main()
@@ -117,6 +118,20 @@ int main()
     stack.pop(item);
 
     stack.show();
+
+}
+#endif
+
+#ifdef C_10_10_6
+int main()
+{
+    Move a;
+    a.showmove();
+    Move b(10,10);
+    b.showmove();
+    a.add(b);
+    a.showmove();
+
 
 }
 #endif
