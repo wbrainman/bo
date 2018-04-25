@@ -4,9 +4,10 @@
 #include "10_10_4.h"
 #include "10_10_5.h"
 #include "10_10_6.h"
+#include "10_10_7.h"
 #include <iostream>
 
-#define C_10_10_6
+#define C_10_10_7
 
 #ifdef C_10_10_1 
 int main()
@@ -131,7 +132,16 @@ int main()
     b.showmove();
     a.add(b);
     a.showmove();
+}
+#endif
 
-
+#ifdef C_10_10_7
+int main()
+{
+    Plorg a;
+    a.show();
+    char *name = "test";
+    Plorg b(name,10);
+    b.show();
 }
 #endif
