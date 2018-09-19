@@ -4,6 +4,7 @@
 
 using std::cin;
 using std::cout;
+using std::endl;
 
 int String::num_strings = 0;
 
@@ -18,6 +19,7 @@ String::String(const char *s)
     str = new char[len + 1];
     std::strcpy(str, s);
     num_strings ++;
+    cout << "111 num_strings=" << num_strings << endl;
 }
 
 String::String()
@@ -26,6 +28,7 @@ String::String()
     str = new char[1];
     str = '\0';
     num_strings ++;
+    cout << "222 num_strings=" << num_strings << endl;
 }
 
 String::String(const String &st)
@@ -34,12 +37,16 @@ String::String(const String &st)
     str = new char[len + 1];
     std::strcpy(str, st.str);
     num_strings ++;
+    cout << "333 num_strings=" << num_strings << endl;
 }
 
 String::~String()
 {
     -- num_strings;
-    delete [] str;
+    cout << "--- num_strings=" << num_strings << endl;
+    if(str != NULL){
+        delete [] str;
+    }
 }
 
 String& String::operator=(const String &st)
@@ -48,24 +55,34 @@ String& String::operator=(const String &st)
         return *this; 
     }
 
-    delete [] str;
+    cout << "operator=" << endl;
+    if(NULL != str) {
+        delete [] str;
+    }
+    cout << "operator= delete end" << endl;
 
     len = st.len;
+    cout << "operator= len = " << len << endl;
     str = new char[len + 1];
+    cout << "operator= new end" << endl;
     std::strcpy(str, st.str);
     num_strings ++;
+    cout << "444 num_strings=" << num_strings << endl;
     return *this; 
 
 }
 
-String&String::operator=(const char *s)
+String& String::operator=(const char *s)
 {
-    delete [] str;
+    if(NULL != str) {
+        delete [] str;
+    }
 
     len = std::strlen(s);
     str = new char[len + 1];
     std::strcpy(str, s);
     num_strings ++;
+    cout << "555 num_strings=" << num_strings << endl;
     return *this; 
 }
 
@@ -112,28 +129,29 @@ istream &operator>>(istream &is, String &st)
     char temp[String::CINLIM];
     is.get(temp, String::CINLIM);
     if(is)
-        st.str = temp;
-        st.len = String::CINLIM;
+        st = temp;
     while(is && is.get() != '\n')
         continue;
     return is;
 }
 
-String& operator+(const char* s, String& st)
+String operator+(const char* s, String& st)
 {
     String temp;
     temp.len = strlen(s) + st.len;
+    delete [] temp.str;
     temp.str = new char[temp.len + 1];
     std::strcpy(temp.str, s);
     std::strcat(temp.str, st.str);
-
+    
+    return temp;
 
 }
 
 String& String::operator+(const String &st)
 {
     len += st.len + 1;
-    char temp[len];
+    char temp[len] = {0};;
 
     std::strcat(temp, str);
     std::strcat(temp, st.str);
@@ -142,6 +160,8 @@ String& String::operator+(const String &st)
 
     str = new char[len];
     std::strcpy(str, temp);
+
+    return *this;
 
 }
 
@@ -158,6 +178,7 @@ String& String::operator+(const char *s)
     str = new char[len];
     std::strcpy(str, temp);
 
+    return *this;
 }
 
 

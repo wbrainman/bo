@@ -27,7 +27,7 @@ public:
     friend bool operator==(const String &st1, const String &st2);
     friend ostream & operator<<(ostream &os, const String &st);
     friend istream & operator>>(istream &is, String &st);
-    friend String& operator+(const char* s, String& st);
+    friend String operator+(const char* s, String& st);
 
     static int HowMany();
 

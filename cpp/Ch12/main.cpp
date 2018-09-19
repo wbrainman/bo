@@ -65,14 +65,16 @@ int main()
     String s3;
     cout << s2;
     cin >> s3;
-
-    s2 = "My name is " + s3;
+    cout << "S3 is " << s3 << endl;
+    s2 = "My name is "+s3;
     cout << s2 << ".\n";
-
-    s2 = s2 + s1;
-    s2.StringUpper();
-    //cout << "The string\n" << s2 << "\ncontains" << s2.
+    s2=s2+s1;
     cout << s2 << ".\n";
+    //s2.StringUpper();
+    cout << s2 << ".\n";
+#if 0
+    cout << s2 << ".\n";
+#endif
 
 }
 #endif
