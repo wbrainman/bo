@@ -28,14 +28,14 @@ void *thread_recv(void *arg)
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = inet_addr("192.168.97.136");
     //address.sin_addr.s_addr = inet_addr("192.168.97.66");
-    address.sin_port = htons(9734);
+    address.sin_port = htons(8000);
 
     len = sizeof(address);
 
 
     result = connect(sockfd, (struct sockaddr *)&address, len);
     if(result == -1) {
-        perror("oops: client1");
+        perror("oops: recv client");
         exit(1);
     }
 

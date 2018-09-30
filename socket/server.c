@@ -117,8 +117,8 @@ static void  show_if_info(int fd, int if_num, struct ifreq* pbuf)
 
 int main()
 {
-    int server_sockfd, client_sockfd;
-    int client_send, client_recv;
+    int server_sockfd, connect_fd;
+    int send_fd, recv_fd;
 	struct sockaddr_in *pServer_addr;
 	struct sockaddr_in client_address;
     int server_len = sizeof(struct sockaddr_in);
@@ -131,11 +131,21 @@ int main()
     pthread_t thread_server_recv;
     pthread_t thread_server_send;
 
-    server_sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    server_sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
     pServer_addr = get_if_info(server_sockfd);
-	pServer_addr->sin_port = htons(9734);
+	pServer_addr->sin_port = htons(8000);
     client_len = sizeof(client_address);
+
+#if 0
+	struct sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    server_addr.sin_port = htonl(8000);
+    printf("AAA	addr: %s\n",inet_ntoa(server_addr.sin_addr));
+#endif
+
+
 
     bind(server_sockfd, (struct sockaddr *)pServer_addr, server_len);
 
@@ -145,19 +155,19 @@ int main()
         printf("\n");
         printf("*************************************************************\n");
         printf("server waiting\n");
-        client_sockfd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
+        connect_fd = accept(server_sockfd, (struct sockaddr *)&client_address, &client_len);
 		printf("client info:\n");
 		printf("	type: %d\n",client_address.sin_family);
 		printf("	port: %d\n",ntohs(client_address.sin_port));
 		printf("	addr: %s\n",inet_ntoa(client_address.sin_addr));
 		printf("\n");
 
-        if(recv(client_sockfd, data, BUFFER_SIZE, 0) > 0) {
+        if(recv(connect_fd, data, BUFFER_SIZE, 0) > 0) {
 #if 1
             if(0 == strcmp(data, "recv")) {
-				client_send = client_sockfd;
-                printf("we can send now, sockfd = %d\n",client_send);
-                res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&client_send)); 
+				send_fd = connect_fd;
+                printf("we can send now, sockfd = %d\n",send_fd);
+                res = pthread_create(&thread_server_recv, NULL, server_send, (void*)(&send_fd)); 
                 if(res != 0) {
                     perror("Thread server recv creat failed"); 
                     exit(EXIT_FAILURE);
@@ -166,9 +176,9 @@ int main()
 //#else
 
             if(0 == strcmp(data, "send")) {
-				client_recv = client_sockfd;
-                printf("we can recv now, sockfd = %d\n",client_recv);
-                res = pthread_create(&thread_server_send, NULL, server_recv, (void*)(&client_recv)); 
+				recv_fd = connect_fd;
+                printf("we can recv now, sockfd = %d\n",recv_fd);
+                res = pthread_create(&thread_server_send, NULL, server_recv, (void*)(&recv_fd)); 
                 if(res != 0) {
                     perror("Thread server send creat failed"); 
                     exit(EXIT_FAILURE);
