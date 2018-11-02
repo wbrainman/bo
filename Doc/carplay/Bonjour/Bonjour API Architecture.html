@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bonjour API Architecture</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    
+    <meta id="book-resource-type" name="book-resource-type" content="Guide">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/10000119i">
+    <meta id="document-version" name="document-version" content="5.6.0">
+    <meta id="build" name="build" content="a2fc0b0a378f71393fc369bffd1f2b5d">
+    <meta id="chapterId" name="chapterId" content="TP40002459">
+    <meta id="date" name="date" content="2013-04-23">
+    <meta id="description" name="description" content="Explains how to use Apple&#39;s zero-configuration networking architecture in Cocoa applications.">
+    <meta id="book-title" name="book-title" content="Bonjour Overview">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="Mac Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/mac">
+    <meta id="reflib" name="reflib" content="Guides and Sample Code">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Topic/Networking, Internet, &amp; Web/Services &amp; Discovery}">
+    
+    
+    <meta id="copyright" name="copyright" content="Copyright 2017 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="Bonjour Overview: Bonjour API Architecture">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/1274">
+    <link id="book-index-page" rel="Start" title="Bonjour Overview" type="text/html" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/index.html">
+    <link id="next-page" rel="Next" type="text/html" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html">
+    <link rel="stylesheet" type="text/css" href="./Bonjour API Architecture_files/screen.css">
+    
+    <!-- xcode_css -->
+    <link rel="stylesheet" type="text/css" href="./Bonjour API Architecture_files/feedback.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta id="platforms" name="platforms" content="">
+</head>    
+<body class="isShowingTOC" id=""><a name="//apple_ref/doc/uid/TP40002459" title="Bonjour API Architecture"></a>
+    <div id="_omniture_top">
+    <!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+    <script type="text/javascript">
+    /* RSID: */
+    var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+    </script>
+
+    <script type="text/javascript" src="./Bonjour API Architecture_files/s_code_h.js"></script>
+    <script type="text/javascript">
+    s.pageName=AC.Tracking.pageName();
+    s.channel="www.us.developer"
+
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)</script>
+    <!-- End SiteCatalyst code version: H.8. -->
+    </div>
+
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode unified">
+            <a id="ssi_LibraryTitle" href="https://developer.apple.com/library/content/navigation/" onclick="s_objectID=&quot;https://developer.apple.com/library/content/navigation/_1&quot;;return this.s_oc?this.s_oc(e):true">Guides and Sample Code</a>
+            <a id="ssi_AppleDeveloperConnection" href="https://developer.apple.com/" onclick="s_objectID=&quot;https://developer.apple.com/_1&quot;;return this.s_oc?this.s_oc(e):true">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="https://developer.apple.com/library/content/search/" accept-charset="utf-8">
+            <label for="adcsearch">Search Guides and Sample Code</label>
+            
+            
+    
+            <input type="search" id="ssi_SearchField" name="q" accesskey="s" results="5">
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>Bonjour Overview</h1>
+            <span id="file_links">
+                <a id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF" class=""><span id="pdf_icon"></span>PDF</a>
+                <a id="Companion_link" role="button" tabindex="3" title="Download Companion File" class=""><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option value="top">Jump To…</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav id="tocContainer" tabindex="7" class="isShowingTOC">
+        <ul id="toc" role="tree"><li class=" " data-aref="//apple_ref/doc/uid/TP40002445-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Introduction.html#//apple_ref/doc/uid/TP40002445-SW1">Introduction</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40002458-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-SW1">Bonjour Concepts</a></span><ul><li class="children " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF107" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF107">Why Bonjour?</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF108"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF108">Zero Configuration: An Example</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF109" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF109">What Is Bonjour?</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF110"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF110">Addressing</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-BBCJFDFF"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-BBCJFDFF">Naming</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF111"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF111">Service Discovery</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF112" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF112">How Bonjour Reduces Overhead</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF113"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF113">Caching</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF114"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF114">Suppression of Duplicate Responses</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002458-TPXREF115"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/about.html#//apple_ref/doc/uid/TP40002458-TPXREF115">Exponential Back-off and Service Announcement</a></span></li></ul></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40002460-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-SW1">Domain Naming Conventions</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-TPXREF117"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-TPXREF117">Domain Names and DNS</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-CJBDIAHA"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-CJBDIAHA">Bonjour and the Local Link</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-SW4"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-SW4">Bonjour and Unicast DNS</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-TPXREF118"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-TPXREF118">Bonjour Names for Existing Service Types</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-TPXREF119"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-TPXREF119">Bonjour Names for New Services</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002460-TPXREF120"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html#//apple_ref/doc/uid/TP40002460-TPXREF120">Bonjour Names for Service Instances</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40002459-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW1">Bonjour API Architecture</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40002459-SW3"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW3">NSNetService and NSNetServiceBrowser</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002459-SW4"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW4">CFNetServices</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40002459-SW5"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW5">DNS Service Discovery</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/20001074-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-SW1">Bonjour Operations</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/20001074-96838"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-96838">Architectural Overview</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/20001074-96877" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-96877">Publication</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/20001074-98664"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-98664">Service Records</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/20001074-98782"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-98782">Pointer Records</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/20001074-100100"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-100100">Text Records</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/20001074-98854"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-98854">Publication: An Example</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/20001074-100824"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-100824">Discovery</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/20001074-96895"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html#//apple_ref/doc/uid/20001074-96895">Resolution</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40008762-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW1">Appendix A: Bonjour - Frequently Asked Questions</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW2"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW2">1. What is Bonjour?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW3"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW3">2. What is mDNSResponder?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW4"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW4">3. Does Bonjour work between multiple subnets?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW14"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW14">4. When I disconnect a device from a network, does it remain visible?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW15"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW15">5. What do I have to do to support Bonjour over Bluetooth in iOS?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW16"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW16">6. How long should I leave service browsers running?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW5"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW5">7. Does Bonjour support "SOAP" RPC over HTTP?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW6"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW6">8. Does Bonjour have any kind of subscription or notification mechanism?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW7"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW7">9. What should I pass in for the "name" parameter when registering a service?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW8"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW8">10. What should I pass in for the "type" parameter when registering a service?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW9"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW9">11. What should I pass in for the "domain" parameter when registering a service?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW10"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW10">12. What should happen when two devices on the network both use the same service name?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW11"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW11">13. What is the TXT record used for?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW12"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW12">14. After the user browses the network in my application and selects the service instance they wish to use, I should save that IP address in my application's preference file, right?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40008762-SW13"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/faq.html#//apple_ref/doc/uid/TP40008762-SW13">15. My hardware device has a built-in web server used for configuration. Should I register it using Bonjour?</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/20001610-CJBGIAGF"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/RevisionHistory.html#//apple_ref/doc/uid/20001610-CJBGIAGF">Revision History</a></span></li><ul id="TOC_relatedBooks_0" class="related"><h3>RELATED DOCUMENTS</h3><li class=" " data-aref="//apple_ref/doc/uid/TP40002736"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Networking/Conceptual/NSNetServiceProgGuide/Introduction.html#//apple_ref/doc/uid/TP40002736">NSNetServices and CFNetServices Programming Guide</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP30000964"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/content/documentation/Networking/Conceptual/dns_discovery_api/Introduction.html#//apple_ref/doc/uid/TP30000964">DNS Service Discovery Programming Guide</a></span></li></ul></ul>
+    </nav>
+
+    <article id="contents" tabindex="0" role="main" class="isShowingTOC">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/N_1&quot;;return this.s_oc?this.s_oc(e):true">Next</a><a class="previousLink" rel="prev" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/d_1&quot;;return this.s_oc?this.s_oc(e):true">Previous</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/index.html" style="display:none;" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/index.html_1&quot;;return this.s_oc?this.s_oc(e):true"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40002459-SW1" title="Bonjour API Architecture"></a><h1 id="pageTitle">Bonjour API Architecture</h1><p>OS X and iOS provide several layers of application programming interface (API) for Bonjour service applications: The NSNetService and NSNetServiceBrowser classes in the Foundation framework; CFNetServices, part of the CFNetwork framework in Core Services; DNS Service Discovery for Java (OS X only); and the low-level DNS Service Discovery API built around BSD sockets. All three API sets provide facilities for publication, discovery, and resolution of network services. <span class="content_text"><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#//apple_ref/doc/uid/TP40002459-SW2" data-renderer-version="1" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/p_1&quot;;return this.s_oc?this.s_oc(e):true">Figure 3-1</a></span> illustrates the structure of the API layers. As you can see, the Multicast DNS responder (or other DNS server) sits at the lowest level, so your software does not have to interact directly with DNS.</p><figure class="figure"><a name="//apple_ref/doc/uid/TP40002459-SW2" title="Figure 3-1API layers for Bonjour network services"></a><figcaption><strong class="caption_number">Figure 3-1</strong>&nbsp;&nbsp;API layers for Bonjour network services</figcaption><img src="./Bonjour API Architecture_files/rendarch_04apilayers_2x.png" alt="" width="527" height="157"></figure><section><a name="//apple_ref/doc/uid/TP40002459-SW3" title="NSNetService and NSNetServiceBrowser"></a><h2 class="jump">NSNetService and NSNetServiceBrowser</h2><p>The <code>NSNetService</code> and <code>NSNetServiceBrowser</code> classes, part of the Foundation framework in Cocoa, provide object-oriented abstractions for service discovery and publication. <code>NSNetService</code> objects represent instances of Bonjour services, either for publication or a service discovered by a client, and <code>NSNetServiceBrowser</code> represents a browser for a particular type of service. Most Cocoa programmers should find these classes sufficient to meet their needs. If you need more detailed control, you can use the DNS Service Discovery API from a Cocoa application.</p><p><code>NSNetService</code> and <code>NSNetServiceBrowser</code> are scheduled on the default <code>NSRunLoop</code> object to perform publication, discovery, and resolution asynchronously. All results returned by <code>NSNetService</code> and <code>NSNetServiceBrowser</code> objects are handled by delegate objects. These objects must be associated with a run loop to function, but it need not be the default one.</p></section><section><a name="//apple_ref/doc/uid/TP40002459-SW4" title="CFNetServices"></a><h2 class="jump">CFNetServices</h2><p>The CFNetServices API declared in the Core Services framework provide Core Foundation-style types and functions for managing services and service discovery. CFNetServices defines three Core Foundation object types, CFNetService, CFNetServiceBrowser, and CFNetServiceMonitor. CFNetService is an abstract representation of a service instance, either for publication or for use. Associated functions provide support for publishing and resolving services. CFNetServiceBrowser represents a browser for a particular type of service in a particular domain. You should generally use this API only if you are writing code at the Core Foundation layer in OS X or iOS.</p><p>Both CFNetService and CFNetServiceBrowser objects are normally serviced in CFRunLoops. To retrieve results, applications implement callback functions to handle events, such as new services appearing or disappearing, instances being resolved, and errors occurring. Unlike NSNetService and NSNetServiceBrowser, CFNetServices types do not require a run loop and can run synchronously if this behavior is needed. However, it is bad practice to use the synchronous modes of these functions.</p></section><section><a name="//apple_ref/doc/uid/TP40002459-SW5" title="DNS Service Discovery"></a><h2 class="jump">DNS Service Discovery</h2><p>The DNS Service Discovery API, declared in <code>/usr/include/dns_sd.h</code>, provide low-level BSD socket communication for Bonjour services. DNS Service Discovery acts as an intermediate layer between your software and the Multicast DNS responder or DNS server. It manages the Multicast DNS responder for you, letting you write your program in terms of services and service browsers instead of DNS resource records.</p><p>Because the DNS Service Discovery API is part of the Darwin open source project, you should use it when writing cross-platform code (for platforms beyond just iOS and OS X) or when you need to use low-level features that are unavailable in higher-level APIs such as <code>NSNetService</code>.</p><p>DNS Service Discovery is also the API that should be used if developing Bonjour service applications for Windows, Linux, or FreeBSD.</p></section>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/NetServicesArchitecture.html" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/N_2&quot;;return this.s_oc?this.s_oc(e):true">Next</a><a class="previousLink" rel="prev" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/domainnames.html" onclick="s_objectID=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/d_2&quot;;return this.s_oc?this.s_oc(e):true">Previous</a>
+        </div><br>
+        <div class="copyright"><br><hr><div align="center"><p class="content_text" lang="en" dir="ltr"> Copyright © 2013 Apple Inc. All Rights Reserved.  <a href="http://www.apple.com/legal/internet-services/terms/site.html" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/legal/internet-services/terms/site.html_1&quot;;return this.s_oc?this.s_oc(e):true">Terms of Use</a>   |  <a href="http://www.apple.com/privacy/" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/privacy/_1&quot;;return this.s_oc?this.s_oc(e):true">Privacy Policy</a>  |  Updated: 2013-04-23</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback…</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We’re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/NetServices/Articles/programming.html#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1"> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2"> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3"> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo"> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect"> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples"> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art"> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo"> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required=""></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send">
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank" onclick="s_objectID=&quot;https://developer.apple.com/bugreporter/_1&quot;;return this.s_oc?this.s_oc(e):true">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/legal/policies/ideas.html_1&quot;;return this.s_oc?this.s_oc(e):true">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="./Bonjour API Architecture_files/prototype.js"></script>
+    <script src="./Bonjour API Architecture_files/library.js"></script>
+    <script src="./Bonjour API Architecture_files/feedback.js"></script>
+
+
+</body></html>

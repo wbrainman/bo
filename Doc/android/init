@@ -1,0 +1,19 @@
+# Android init初探
+- init 进程是linux启动后运行的第一个进程。
+- 程序入口在system/core/init/init.c
+
+## 属性系统
+  在init.c的main函数中，首先调用：
+
+```
+__system_properties_init (定义在libcutils中)
+
+  //得到环境变量ANDROID_PROPERTY_WORKSPACE，比如：ANDROID_PROPERTY_WORKSPACE=8,49152
+  //第一个值是fd,第二个值是size
+  getenv("ANDROID_PROPERTY_WORKSPACE");
+  //把fd指向的文件，以size大小映射到内存当中。
+  mmap(0, sz, PROT_READ, MAP_SHARED, fd, 0);
+  //获取的内存地址指针给_system_property_area__
+  _system_property_area__ = pa;
+
+```
