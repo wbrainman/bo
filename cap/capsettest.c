@@ -125,12 +125,8 @@ int main()
     if(pid == 0) {
         //setuid(1000);
         //setgid(1000);
-        printf("in child pid = %d, uid = %d, gid = %d\n", getpid(),getuid(), getgid());
-        setCap(pid);
-        while(1) {
-            sleep(10);
-            //showCap(getpid());
-        }
+        //printf("in child pid = %d, uid = %d, gid = %d\n", getpid(),getuid(), getgid());
+        execve("./main", NULL, NULL);
     }
     else {
         printf("in father pid = %d, child pid = %d, uid = %d, gid = %d\n", getpid(), pid, getuid(), getgid());
