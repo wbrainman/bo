@@ -1,4 +1,3 @@
-
 all:	install
 
 CC = g++
