@@ -48,3 +48,39 @@ void setCap(pid_t pid)
      }
 }
 
+void showFileCap(char* pFile)
+{
+    if(!pFile) {
+        printf("pFile is null"); 
+        return;
+    }
+
+    cap_t caps = cap_get_file(pFile);
+    ssize_t y = 0;
+    printf("The file %s was give capabilities %s\n",pFile, cap_to_text(caps, &y));
+    fflush(0);
+    cap_free(caps);
+}
+
+void setFileCap(char* pFile)
+{
+    if(!pFile) {
+        printf("pFile is null"); 
+        return;
+    }
+
+    cap_t caps = cap_init();
+
+    cap_value_t capList[5] ={ CAP_NET_RAW, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID,CAP_SETPCAP } ;
+    unsigned num_caps = 5;
+
+    cap_set_flag(caps, CAP_EFFECTIVE, num_caps, capList, CAP_SET);
+    cap_set_flag(caps, CAP_INHERITABLE, num_caps, capList, CAP_SET);
+    cap_set_flag(caps, CAP_PERMITTED, num_caps, capList, CAP_SET);
+     
+    if (cap_set_file(pFile,caps)) {
+        perror("capset()");
+        return;
+    }
+    cap_free(caps);
+}

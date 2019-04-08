@@ -11,5 +11,6 @@
 #include "libcap-2.25/libcap/libcap.h"
 
 extern void showCap(pid_t pid);
-
 extern void setCap(pid_t pid);
+extern void showFileCap(char* pFile);
+extern void setFileCap(char* pFile);
