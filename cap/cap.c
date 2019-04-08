@@ -71,12 +71,32 @@ void setFileCap(char* pFile)
 
     cap_t caps = cap_init();
 
-    cap_value_t capList[5] ={ CAP_NET_RAW, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID,CAP_SETPCAP } ;
-    unsigned num_caps = 5;
+    //cap_value_t capList[5] ={ CAP_NET_RAW, CAP_NET_BIND_SERVICE , CAP_SETUID, CAP_SETGID,CAP_SETPCAP } ;
+    //unsigned num_caps = 5;
+    cap_value_t capList[1] ={ CAP_NET_ADMIN} ;
+    unsigned num_caps = 1;
 
     cap_set_flag(caps, CAP_EFFECTIVE, num_caps, capList, CAP_SET);
     cap_set_flag(caps, CAP_INHERITABLE, num_caps, capList, CAP_SET);
     cap_set_flag(caps, CAP_PERMITTED, num_caps, capList, CAP_SET);
+     
+    if (cap_set_file(pFile,caps)) {
+        perror("capset()");
+        return;
+    }
+    cap_free(caps);
+}
+
+void clearFileCap(char* pFile)
+{
+    if(!pFile) {
+        printf("pFile is null"); 
+        return;
+    }
+
+    cap_t caps = cap_init();
+    cap_clear(caps);
+
      
     if (cap_set_file(pFile,caps)) {
         perror("capset()");

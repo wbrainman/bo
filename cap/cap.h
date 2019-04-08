@@ -14,3 +14,4 @@ extern void showCap(pid_t pid);
 extern void setCap(pid_t pid);
 extern void showFileCap(char* pFile);
 extern void setFileCap(char* pFile);
+extern void clearFileCap(char* pFile);

@@ -19,19 +19,16 @@ int main()
        }
         showCap(getpid());
 #endif
-#if 0
         char* pFile = "./test";
+        clearFileCap(pFile);
         showFileCap(pFile);
         setFileCap(pFile);
         showFileCap(pFile);
-
         setgid(1000);
         setuid(1000);
-#endif
 
-        setEtherStatus("eth0", 1);
 
-        //execve("./test", NULL, NULL);
+        execve("./test", NULL, NULL);
     }
     else {
         //printf("in father pid = %d, child pid = %d, uid = %d, gid = %d\n", getpid(), pid, getuid(), getgid());
